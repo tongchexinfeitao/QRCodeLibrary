@@ -46,7 +46,7 @@
  
  四、注意事项
  1、库中已经适配好权限和动态权限，不用再添加权限
- 2、关于v7包版本不一致的问题可以在 app的build.gradle的  android 的 外 面添加， 制定成自己的版本号
+ 2、关于v7包版本不一致的问题可以在 app的build.gradle的  android 的 外 面添加， 指定成自己的版本号
  
  configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
