@@ -18,7 +18,8 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        //二维码库的依赖之一
+        maven { url 'https://www.jitpack.io' }
     }
 }
 

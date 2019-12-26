@@ -22,8 +22,22 @@ import butterknife.OnClick;
 
 /**
  * 权限和动态权限库中已经都加了，不需要再加
+ *
  * 必须初始化
- * 相机、相册识别二维码必须重写 CodeUtils.onActivityResult 接受
+ * CodeUtils.init(this);
+ *
+ * 用法1、 根据文字生成二维码
+ *  Bitmap qrBitmap = CodeUtils.createImage(content, 400, 400, BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round));
+ *
+ * 用法2、 相机扫一扫识别二维码
+ * CodeUtils.analyzeByCamera(this);   重写 onActivityResult方法，调用 CodeUtils.onActivityResult 接受结果
+ *
+ * 用法3、 打开相册选择二维码图片识别二维码
+ * CodeUtils.analyzeByPhotos(this);   重写 onActivityResult方法，调用 CodeUtils.onActivityResult 接受结果
+ *
+ *用法4、 长按或者点击二维码图片，识别二维码
+ * CodeUtils.analyzeByImageView(imageView, AnalyzeCallback)
+ *
  */
 public class MainActivity extends AppCompatActivity {
 
