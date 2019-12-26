@@ -36,7 +36,7 @@
  * 用法3、 打开相册选择二维码图片识别二维码
  * CodeUtils.analyzeByPhotos(this);   重写 onActivityResult方法，调用 CodeUtils.onActivityResult 接受结果
  *
- *用法4、 长按或者点击二维码图片，识别二维码
+ * 用法4、 长按或者点击二维码图片，识别二维码
  * CodeUtils.analyzeByImageView(imageView, AnalyzeCallback)
  *
  */
