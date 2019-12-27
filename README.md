@@ -21,9 +21,13 @@ dependencies {
     //二维码依赖之一
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+    
         def requested = details.requested
+	
         if (requested.group == 'com.android.support') {
+	
             if (!requested.name.startsWith("multidex")) {
+	    
                 details.useVersion '28.0.0'
             }
         }
