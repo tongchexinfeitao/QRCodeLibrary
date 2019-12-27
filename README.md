@@ -16,7 +16,7 @@ dependencies {
         implementation 'com.github.tongchexinfeitao:QRCodeLibrary:1.0'
 }
 
-3、在 dependencies{} 上面 加上，下面红色部分，版本号28.0.0需要修改改成自己的V7版本号
+3、在 dependencies{} 上面 加上下面部分，版本号28.0.0需要修改改成自己的V7版本号
 
     //二维码依赖之一
 configurations.all {
@@ -86,9 +86,13 @@ dependencies {
  
  configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+    
         def requested = details.requested
+	
         if (requested.group == 'com.android.support') {
+	
             if (!requested.name.startsWith("multidex")) {
+	    
                 details.useVersion '28.0.0'
             }
         }
