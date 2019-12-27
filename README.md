@@ -1,20 +1,49 @@
-一、依赖
+一、普通用户依赖
 
 1、在根工程的 build.gradle 中:
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://www.jitpack.io' }
-		}
+allprojects {
+	repositories {
+		...
+		maven { url 'https://www.jitpack.io' }
 	}
-	
-	
+}
+
+
 2、在 app 的build.gradle 中：
+dependencies {
+        implementation 'com.github.tongchexinfeitao:QRCodeLibrary:1.0'
+}
 
-	dependencies {
-	        implementation 'com.github.tongchexinfeitao:QRCodeLibrary:1.0'
+3、在 dependencies{} 上面 加上，下面红色部分，版本号28.0.0需要修改改成自己的V7版本号
+    //二维码依赖之一
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '28.0.0'
+            }
+        }
+    }
+}
+
+
+
+二、androidX用户
+
+1、在根工程的 build.gradle 中:
+allprojects {
+	repositories {
+		...
+		maven { url 'https://www.jitpack.io' }
 	}
+}
+
+
+2、在 app 的build.gradle 中：
+dependencies {
+        implementation 'com.github.tongchexinfeitao:QRCodeLibrary:1.0'
+}
 	
 
 ---------------------------------------------------------------------------------------------------
